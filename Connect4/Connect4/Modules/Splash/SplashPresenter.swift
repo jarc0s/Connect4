@@ -28,7 +28,7 @@ extension SplashPresenter: SplashPresenterProtocol {
       DispatchQueue.main.async{
         //do stuff in the main thread here
         debugPrint("Present Home View")
-        self.wireFrame?.presentHomeView(from: self.view!)
+        self.wireFrame?.presentHomeView()
       }
     }
   }

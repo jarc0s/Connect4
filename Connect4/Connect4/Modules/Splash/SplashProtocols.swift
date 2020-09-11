@@ -17,7 +17,7 @@ protocol SplashViewProtocol: class {
 protocol SplashWireFrameProtocol: class {
   // PRESENTER -> WIREFRAME
   static func createSplashModule() -> UIViewController
-  func presentHomeView(from view: SplashViewProtocol)
+  func presentHomeView()
 }
 
 protocol SplashPresenterProtocol: class {

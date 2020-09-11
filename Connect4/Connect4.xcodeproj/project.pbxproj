@@ -43,6 +43,13 @@
 		8894E80F250BD409003010E7 /* HistoryView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8894E808250BD409003010E7 /* HistoryView.swift */; };
 		8894E810250BD409003010E7 /* HistoryWireFrame.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8894E809250BD409003010E7 /* HistoryWireFrame.swift */; };
 		8894E812250BD419003010E7 /* HistoryView.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 8894E811250BD419003010E7 /* HistoryView.storyboard */; };
+		8894E815250BDBF2003010E7 /* Connect4Enums.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8894E814250BDBF2003010E7 /* Connect4Enums.swift */; };
+		8894E817250BDC1F003010E7 /* Player.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8894E816250BDC1F003010E7 /* Player.swift */; };
+		8894E819250BDC3B003010E7 /* Game.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8894E818250BDC3B003010E7 /* Game.swift */; };
+		8894E81C250BDC82003010E7 /* Date+Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8894E81B250BDC82003010E7 /* Date+Extension.swift */; };
+		8894E81E250BDF37003010E7 /* Board.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8894E81D250BDF37003010E7 /* Board.swift */; };
+		8894E820250BE015003010E7 /* Constants.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8894E81F250BE015003010E7 /* Constants.swift */; };
+		8894E823250BE5D5003010E7 /* DataPersistance.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8894E822250BE5D5003010E7 /* DataPersistance.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -96,6 +103,13 @@
 		8894E808250BD409003010E7 /* HistoryView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HistoryView.swift; sourceTree = "<group>"; };
 		8894E809250BD409003010E7 /* HistoryWireFrame.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HistoryWireFrame.swift; sourceTree = "<group>"; };
 		8894E811250BD419003010E7 /* HistoryView.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = HistoryView.storyboard; sourceTree = "<group>"; };
+		8894E814250BDBF2003010E7 /* Connect4Enums.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Connect4Enums.swift; sourceTree = "<group>"; };
+		8894E816250BDC1F003010E7 /* Player.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Player.swift; sourceTree = "<group>"; };
+		8894E818250BDC3B003010E7 /* Game.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Game.swift; sourceTree = "<group>"; };
+		8894E81B250BDC82003010E7 /* Date+Extension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Date+Extension.swift"; sourceTree = "<group>"; };
+		8894E81D250BDF37003010E7 /* Board.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Board.swift; sourceTree = "<group>"; };
+		8894E81F250BE015003010E7 /* Constants.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Constants.swift; sourceTree = "<group>"; };
+		8894E822250BE5D5003010E7 /* DataPersistance.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DataPersistance.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -137,6 +151,9 @@
 		8894E7AD250BCB67003010E7 /* Connect4 */ = {
 			isa = PBXGroup;
 			children = (
+				8894E821250BE5C9003010E7 /* Data */,
+				8894E81A250BDC70003010E7 /* Utils */,
+				8894E813250BDBCF003010E7 /* Model */,
 				8894E7D0250BCC32003010E7 /* Modules */,
 				8894E7AE250BCB67003010E7 /* AppDelegate.swift */,
 				8894E7B0250BCB67003010E7 /* SceneDelegate.swift */,
@@ -224,6 +241,34 @@
 				8894E801250BD34D003010E7 /* PlayerRegistrationView.storyboard */,
 			);
 			path = PlayerRegistration;
+			sourceTree = "<group>";
+		};
+		8894E813250BDBCF003010E7 /* Model */ = {
+			isa = PBXGroup;
+			children = (
+				8894E814250BDBF2003010E7 /* Connect4Enums.swift */,
+				8894E816250BDC1F003010E7 /* Player.swift */,
+				8894E818250BDC3B003010E7 /* Game.swift */,
+				8894E81D250BDF37003010E7 /* Board.swift */,
+			);
+			path = Model;
+			sourceTree = "<group>";
+		};
+		8894E81A250BDC70003010E7 /* Utils */ = {
+			isa = PBXGroup;
+			children = (
+				8894E81B250BDC82003010E7 /* Date+Extension.swift */,
+				8894E81F250BE015003010E7 /* Constants.swift */,
+			);
+			path = Utils;
+			sourceTree = "<group>";
+		};
+		8894E821250BE5C9003010E7 /* Data */ = {
+			isa = PBXGroup;
+			children = (
+				8894E822250BE5D5003010E7 /* DataPersistance.swift */,
+			);
+			path = Data;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -329,6 +374,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				8894E823250BE5D5003010E7 /* DataPersistance.swift in Sources */,
 				8894E80D250BD409003010E7 /* HistoryProtocols.swift in Sources */,
 				8894E7DA250BCC51003010E7 /* SplashLocalDataManager.swift in Sources */,
 				8894E7AF250BCB67003010E7 /* AppDelegate.swift in Sources */,
@@ -338,7 +384,9 @@
 				8894E7EF250BD0FB003010E7 /* HomeView.swift in Sources */,
 				8894E7FC250BD33A003010E7 /* PlayerRegistrationPresenter.swift in Sources */,
 				8894E7EC250BD0FB003010E7 /* HomePresenter.swift in Sources */,
+				8894E81C250BDC82003010E7 /* Date+Extension.swift in Sources */,
 				8894E7EA250BD0FB003010E7 /* HomeInteractor.swift in Sources */,
+				8894E815250BDBF2003010E7 /* Connect4Enums.swift in Sources */,
 				8894E7FA250BD33A003010E7 /* PlayerRegistrationInteractor.swift in Sources */,
 				8894E7FF250BD33A003010E7 /* PlayerRegistrationView.swift in Sources */,
 				8894E7FE250BD33A003010E7 /* PlayerRegistrationRemoteDataManager.swift in Sources */,
@@ -348,6 +396,7 @@
 				8894E80B250BD409003010E7 /* HistoryLocalDataManager.swift in Sources */,
 				8894E7F0250BD0FB003010E7 /* HomeWireFrame.swift in Sources */,
 				8894E7DD250BCC51003010E7 /* SplashRemoteDataManager.swift in Sources */,
+				8894E817250BDC1F003010E7 /* Player.swift in Sources */,
 				8894E80A250BD409003010E7 /* HistoryInteractor.swift in Sources */,
 				8894E7DC250BCC51003010E7 /* SplashProtocols.swift in Sources */,
 				8894E80E250BD409003010E7 /* HistoryRemoteDataManager.swift in Sources */,
@@ -355,10 +404,13 @@
 				8894E7DB250BCC51003010E7 /* SplashPresenter.swift in Sources */,
 				8894E7FB250BD33A003010E7 /* PlayerRegistrationLocalDataManager.swift in Sources */,
 				8894E7EE250BD0FB003010E7 /* HomeRemoteDataManager.swift in Sources */,
+				8894E819250BDC3B003010E7 /* Game.swift in Sources */,
 				8894E7DE250BCC51003010E7 /* SplashView.swift in Sources */,
 				8894E810250BD409003010E7 /* HistoryWireFrame.swift in Sources */,
+				8894E81E250BDF37003010E7 /* Board.swift in Sources */,
 				8894E7FD250BD33A003010E7 /* PlayerRegistrationProtocols.swift in Sources */,
 				8894E800250BD33A003010E7 /* PlayerRegistrationWireFrame.swift in Sources */,
+				8894E820250BE015003010E7 /* Constants.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

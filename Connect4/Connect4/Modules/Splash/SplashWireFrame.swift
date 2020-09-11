@@ -11,7 +11,7 @@ import UIKit
 
 class SplashWireFrame: SplashWireFrameProtocol {
   
-  func presentHomeView(from view: SplashViewProtocol) {
+  func presentHomeView() {
     let subModules = (
       homeGame: PlayerRegistrationWireFrame.createPlayerRegistrationModule(),
       homeHistory: HistoryWireFrame.createHistoryModule()
@@ -19,12 +19,6 @@ class SplashWireFrame: SplashWireFrameProtocol {
     
     let homeTabBarView = HomeWireFrame.createHomeModule(submodules: subModules)
     
-    /*if let newView = view as? UIViewController {
-      newView.navigationController?.pushViewController(homeTabBarView, animated: true)
-    }*/
-    
-    //let story = UIStoryboard(name: "Main", bundle:nil)
-    //let vc = story.instantiateViewController(withIdentifier: "NewViewController") as! NewViewController
     UIApplication.shared.windows.first?.rootViewController = homeTabBarView
     UIApplication.shared.windows.first?.makeKeyAndVisible()
     
