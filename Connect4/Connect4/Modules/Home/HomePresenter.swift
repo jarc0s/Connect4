@@ -1,5 +1,5 @@
 //
-//  SplashPresenter.swift
+//  HomePresenter.swift
 //  Connect4
 //
 //  Created by Juan Arcos on 11/09/20.
@@ -8,21 +8,21 @@
 
 import Foundation
 
-class SplashPresenter  {
+class HomePresenter  {
     
     // MARK: Properties
-    weak var view: SplashViewProtocol?
-    var interactor: SplashInteractorInputProtocol?
-    var wireFrame: SplashWireFrameProtocol?
+    weak var view: HomeViewProtocol?
+    var interactor: HomeInteractorInputProtocol?
+    var wireFrame: HomeWireFrameProtocol?
     
 }
 
-extension SplashPresenter: SplashPresenterProtocol {
+extension HomePresenter: HomePresenterProtocol {
     // TODO: implement presenter methods
     func viewDidLoad() {
     }
 }
 
-extension SplashPresenter: SplashInteractorOutputProtocol {
+extension HomePresenter: HomeInteractorOutputProtocol {
     // TODO: implement interactor output methods
 }

@@ -1,5 +1,5 @@
 //
-//  SplashView.swift
+//  HistoryView.swift
 //  Connect4
 //
 //  Created by Juan Arcos on 11/09/20.
@@ -9,10 +9,10 @@
 import Foundation
 import UIKit
 
-class SplashView: UIViewController {
+class HistoryView: UIViewController {
 
     // MARK: Properties
-    var presenter: SplashPresenterProtocol?
+    var presenter: HistoryPresenterProtocol?
 
     // MARK: Lifecycle
 
@@ -21,6 +21,6 @@ class SplashView: UIViewController {
     }
 }
 
-extension SplashView: SplashViewProtocol {
+extension HistoryView: HistoryViewProtocol {
     // TODO: implement view output methods
 }
