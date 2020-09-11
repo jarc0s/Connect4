@@ -10,5 +10,7 @@ import Foundation
 
 class PlayerRegistrationLocalDataManager:PlayerRegistrationLocalDataManagerInputProtocol {
     
-    
+  func writeNewGame(game: Game, key: String) -> Bool {
+    return DataPersistance.writeGame(game: game, key: key)
+  }
 }

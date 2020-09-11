@@ -11,7 +11,7 @@ import UIKit
 
 class HistoryWireFrame: HistoryWireFrameProtocol {
 
-    class func createHistoryModule() -> UIViewController {
+    class func createHistoryModule() -> UINavigationController {
         let viewController = mainStoryboard.instantiateViewController(withIdentifier: "HistoryView")
         if let view = viewController as? HistoryView {
             let presenter: HistoryPresenterProtocol & HistoryInteractorOutputProtocol = HistoryPresenter()
@@ -29,9 +29,9 @@ class HistoryWireFrame: HistoryWireFrameProtocol {
             interactor.remoteDatamanager = remoteDataManager
             remoteDataManager.remoteRequestHandler = interactor
             
-            return viewController
+            return UINavigationController(rootViewController: viewController)
         }
-        return UIViewController()
+        return UINavigationController()
     }
     
     static var mainStoryboard: UIStoryboard {

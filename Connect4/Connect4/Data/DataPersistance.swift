@@ -10,7 +10,7 @@ import Foundation
 
 struct DataPersistance {
   
-  static func writeGame(game: Game, key: String) {
+  static func writeGame(game: Game, key: String) -> Bool {
     let defaults = UserDefaults.standard
     var dictionaryToUpdate: [String:Game] = [:]
     if let currentDictionary = fetchAllGames(key: key) {
@@ -21,8 +21,10 @@ struct DataPersistance {
     if let jsonData = try? JSONEncoder().encode(dictionaryToUpdate),
       let jsonString = String(data: jsonData, encoding: .utf8) {
       defaults.set(jsonString, forKey: key)
+      return true
     }
     
+    return false
   }
   
   static func fetchAllGames(key: String) -> [String:Game]? {
@@ -43,7 +45,7 @@ struct DataPersistance {
     return nil
   }
   
-  static func deleteGame(game: Game, key: String) {
+  static func deleteGame(game: Game, key: String) -> Bool {
     let defaults = UserDefaults.standard
     var dictionaryToUpdate: [String:Game] = [:]
     if let currentDictionary = fetchAllGames(key: key) {
@@ -55,13 +57,16 @@ struct DataPersistance {
     if let jsonData = try? JSONEncoder().encode(dictionaryToUpdate),
       let jsonString = String(data: jsonData, encoding: .utf8) {
       defaults.set(jsonString, forKey: key)
+      return true
     }
     
+    return false
   }
   
-  static func deleteAllGames(key: String) {
+  static func deleteAllGames(key: String) -> Bool {
     let defaults = UserDefaults.standard
     defaults.removeObject(forKey: key)
+    return true
   }
   
 }

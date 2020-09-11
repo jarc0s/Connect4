@@ -10,48 +10,52 @@ import Foundation
 import UIKit
 
 protocol PlayerRegistrationViewProtocol: class {
-    // PRESENTER -> VIEW
-    var presenter: PlayerRegistrationPresenterProtocol? { get set }
+  // PRESENTER -> VIEW
+  var presenter: PlayerRegistrationPresenterProtocol? { get set }
 }
 
 protocol PlayerRegistrationWireFrameProtocol: class {
-    // PRESENTER -> WIREFRAME
-    static func createPlayerRegistrationModule() -> UIViewController
+  // PRESENTER -> WIREFRAME
+  static func createPlayerRegistrationModule() -> UINavigationController
+  func segueToBoardView(from view: PlayerRegistrationViewProtocol, game: Game)
 }
 
 protocol PlayerRegistrationPresenterProtocol: class {
-    // VIEW -> PRESENTER
-    var view: PlayerRegistrationViewProtocol? { get set }
-    var interactor: PlayerRegistrationInteractorInputProtocol? { get set }
-    var wireFrame: PlayerRegistrationWireFrameProtocol? { get set }
-    
-    func viewDidLoad()
+  // VIEW -> PRESENTER
+  var view: PlayerRegistrationViewProtocol? { get set }
+  var interactor: PlayerRegistrationInteractorInputProtocol? { get set }
+  var wireFrame: PlayerRegistrationWireFrameProtocol? { get set }
+  
+  func viewDidLoad()
+  func writeNewGameWith(player1: String, player2: String)
 }
 
 protocol PlayerRegistrationInteractorOutputProtocol: class {
-// INTERACTOR -> PRESENTER
+  // INTERACTOR -> PRESENTER
 }
 
 protocol PlayerRegistrationInteractorInputProtocol: class {
-    // PRESENTER -> INTERACTOR
-    var presenter: PlayerRegistrationInteractorOutputProtocol? { get set }
-    var localDatamanager: PlayerRegistrationLocalDataManagerInputProtocol? { get set }
-    var remoteDatamanager: PlayerRegistrationRemoteDataManagerInputProtocol? { get set }
+  // PRESENTER -> INTERACTOR
+  var presenter: PlayerRegistrationInteractorOutputProtocol? { get set }
+  var localDatamanager: PlayerRegistrationLocalDataManagerInputProtocol? { get set }
+  var remoteDatamanager: PlayerRegistrationRemoteDataManagerInputProtocol? { get set }
+  func writeNewGame(game: Game, key: String) -> Bool
 }
 
 protocol PlayerRegistrationDataManagerInputProtocol: class {
-    // INTERACTOR -> DATAMANAGER
+  // INTERACTOR -> DATAMANAGER
 }
 
 protocol PlayerRegistrationRemoteDataManagerInputProtocol: class {
-    // INTERACTOR -> REMOTEDATAMANAGER
-    var remoteRequestHandler: PlayerRegistrationRemoteDataManagerOutputProtocol? { get set }
+  // INTERACTOR -> REMOTEDATAMANAGER
+  var remoteRequestHandler: PlayerRegistrationRemoteDataManagerOutputProtocol? { get set }
 }
 
 protocol PlayerRegistrationRemoteDataManagerOutputProtocol: class {
-    // REMOTEDATAMANAGER -> INTERACTOR
+  // REMOTEDATAMANAGER -> INTERACTOR
 }
 
 protocol PlayerRegistrationLocalDataManagerInputProtocol: class {
-    // INTERACTOR -> LOCALDATAMANAGER
+  // INTERACTOR -> LOCALDATAMANAGER
+  func writeNewGame(game: Game, key: String) -> Bool
 }

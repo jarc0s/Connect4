@@ -12,8 +12,8 @@ import UIKit
 class HomeWireFrame: HomeWireFrameProtocol {
   
   typealias Submodules = (
-    homeGame: UIViewController,
-    homeHistory: UIViewController
+    homeGame: UINavigationController,
+    homeHistory: UINavigationController
   )
   
   class func createHomeModule(submodules: HomeWireFrame.Submodules) -> UITabBarController {

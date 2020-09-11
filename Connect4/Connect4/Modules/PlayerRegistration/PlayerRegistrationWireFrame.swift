@@ -11,7 +11,7 @@ import UIKit
 
 class PlayerRegistrationWireFrame: PlayerRegistrationWireFrameProtocol {
   
-  class func createPlayerRegistrationModule() -> UIViewController {
+  class func createPlayerRegistrationModule() -> UINavigationController {
     let viewController = mainStoryboard.instantiateViewController(withIdentifier: "PlayerRegistrationView")
     if let view = viewController as? PlayerRegistrationView {
       let presenter: PlayerRegistrationPresenterProtocol & PlayerRegistrationInteractorOutputProtocol = PlayerRegistrationPresenter()
@@ -29,13 +29,21 @@ class PlayerRegistrationWireFrame: PlayerRegistrationWireFrameProtocol {
       interactor.remoteDatamanager = remoteDataManager
       remoteDataManager.remoteRequestHandler = interactor
       
-      return viewController
+      return UINavigationController(rootViewController: viewController)
     }
-    return UIViewController()
+    return UINavigationController()
   }
   
   static var mainStoryboard: UIStoryboard {
     return UIStoryboard(name: "PlayerRegistrationView", bundle: Bundle.main)
+  }
+  
+  func segueToBoardView(from view: PlayerRegistrationViewProtocol, game: Game) {
+    let boardView = BoardWireFrame.createBoardModule(game: game)
+    boardView.hidesBottomBarWhenPushed = true
+    if let currentView = view as? UIViewController {
+      currentView.navigationController?.pushViewController(boardView, animated: true)
+    }
   }
   
 }

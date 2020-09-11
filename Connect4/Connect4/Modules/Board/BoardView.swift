@@ -1,5 +1,5 @@
 //
-//  HistoryView.swift
+//  BoardView.swift
 //  Connect4
 //
 //  Created by Juan Arcos on 11/09/20.
@@ -9,20 +9,32 @@
 import Foundation
 import UIKit
 
-class HistoryView: UIViewController {
+class BoardView: UIViewController {
   
+  @IBOutlet weak var labelIdGame: UILabel!
+  
+  var idGame:String = "" {
+    didSet{
+      DispatchQueue.main.async {
+        self.labelIdGame.text = "IdGame:\(self.idGame)"
+      }
+    }
+  }
   // MARK: Properties
-  var presenter: HistoryPresenterProtocol?
+  var presenter: BoardPresenterProtocol?
   
   // MARK: Lifecycle
   
   override func viewDidLoad() {
     super.viewDidLoad()
+    presenter?.viewDidLoad()
   }
+  
   
   override func viewWillAppear(_ animated: Bool) {
     super.viewWillAppear(animated)
-    navigationController?.setNavigationBarHidden(true, animated: animated)
+    //self.hidesBottomBarWhenPushed = true
+//    navigationController?.setNavigationBarHidden(true, animated: animated)
   }
   
   override func viewWillDisappear(_ animated: Bool) {
@@ -32,6 +44,9 @@ class HistoryView: UIViewController {
   
 }
 
-extension HistoryView: HistoryViewProtocol {
+extension BoardView: BoardViewProtocol {
   // TODO: implement view output methods
+  func setIdGame(idGame: String) {
+    self.idGame = idGame
+  }
 }

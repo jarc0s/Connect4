@@ -16,7 +16,7 @@ protocol HistoryViewProtocol: class {
 
 protocol HistoryWireFrameProtocol: class {
     // PRESENTER -> WIREFRAME
-    static func createHistoryModule() -> UIViewController
+    static func createHistoryModule() -> UINavigationController
 }
 
 protocol HistoryPresenterProtocol: class {

@@ -9,14 +9,18 @@
 import Foundation
 
 class PlayerRegistrationInteractor: PlayerRegistrationInteractorInputProtocol {
-
-    // MARK: Properties
-    weak var presenter: PlayerRegistrationInteractorOutputProtocol?
-    var localDatamanager: PlayerRegistrationLocalDataManagerInputProtocol?
-    var remoteDatamanager: PlayerRegistrationRemoteDataManagerInputProtocol?
-
+  
+  // MARK: Properties
+  weak var presenter: PlayerRegistrationInteractorOutputProtocol?
+  var localDatamanager: PlayerRegistrationLocalDataManagerInputProtocol?
+  var remoteDatamanager: PlayerRegistrationRemoteDataManagerInputProtocol?
+  
+  func writeNewGame(game: Game, key: String) -> Bool {
+    return localDatamanager?.writeNewGame(game: game, key: key) ?? false
+  }
+  
 }
 
 extension PlayerRegistrationInteractor: PlayerRegistrationRemoteDataManagerOutputProtocol {
-    // TODO: Implement use case methods
+  // TODO: Implement use case methods
 }
