@@ -21,7 +21,7 @@ extension SplashPresenter: SplashPresenterProtocol {
   // TODO: implement presenter methods
   func viewDidLoad() {
     //Wait 5 Seconds and them change to HomeView
-    _ = DataPersistance.deleteAllGames(key: Constants.Defaults.KEY_GAME_CONNECT4)
+    //_ = DataPersistance.deleteAllGames(key: Constants.Defaults.KEY_GAME_CONNECT4)
     DispatchQueue.global(qos: .background).async {
       let second: Double = 1000000
       usleep(useconds_t(1.0 * second))

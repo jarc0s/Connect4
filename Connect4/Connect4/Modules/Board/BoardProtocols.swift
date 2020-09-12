@@ -13,6 +13,15 @@ protocol BoardViewProtocol: class {
   // PRESENTER -> VIEW
   var presenter: BoardPresenterProtocol? { get set }
   func setIdGame (idGame: String)
+  func configureGame (game: Game)
+  func disableAllButtons (disable: Bool)
+  func makePlayerTryToPutChip (column: Int)
+  func putChipIn(position: BoardPosition)
+  func updateChipCountForPlayer()
+  func shiftPlayer()
+  func lightUpChipOn(column: Int, alpha: CGFloat)
+  func isPlayerWin()
+  func showWinner()
 }
 
 protocol BoardWireFrameProtocol: class {
@@ -29,6 +38,10 @@ protocol BoardPresenterProtocol: class {
   var game: Game? { get set }
   
   func viewDidLoad()
+  func makeMovement(column: Int, isPlayer1sTurn: Bool)
+  func validatePlayerAction(result: ResultPlayerAction)
+  func validateVerificationOfWinner(result: Bool)
+  func saveGameOnDevice(player: Player, chipsPlayer1: Int, chipsPlayer2: Int)
 }
 
 protocol BoardInteractorOutputProtocol: class {
@@ -40,6 +53,7 @@ protocol BoardInteractorInputProtocol: class {
   var presenter: BoardInteractorOutputProtocol? { get set }
   var localDatamanager: BoardLocalDataManagerInputProtocol? { get set }
   var remoteDatamanager: BoardRemoteDataManagerInputProtocol? { get set }
+  func saveGameOnDevice(game: Game) -> Bool
 }
 
 protocol BoardDataManagerInputProtocol: class {
@@ -57,4 +71,5 @@ protocol BoardRemoteDataManagerOutputProtocol: class {
 
 protocol BoardLocalDataManagerInputProtocol: class {
   // INTERACTOR -> LOCALDATAMANAGER
+  func saveGameOnDevice(game: Game, key: String) -> Bool
 }

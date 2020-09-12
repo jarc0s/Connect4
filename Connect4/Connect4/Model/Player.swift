@@ -8,6 +8,9 @@
 
 import Foundation
 
+typealias ResultPlayerAction = (correctPlace: Bool, position: (xPos: Int, yPos: Int))
+typealias BoardPosition = (xPos: Int, yPos: Int)
+
 struct Player: Codable {
   var name: String
   var chipsPlaced: Int = 0
@@ -22,18 +25,18 @@ struct Player: Codable {
 
 protocol MakeMovement {
   
-  mutating func placeChipOnColumn(column: Int, array: inout [[Int]]) -> (correctPlace: Bool, position: (xPos: Int, yPos:Int))
+  mutating func placeChipOnColumn(column: Int, array: inout [[Int]]) -> ResultPlayerAction//(correctPlace: Bool, position: (xPos: Int, yPos:Int))
   
-  func validateWinnerAtPoint(position: (xPos: Int, yPos: Int), array: [[Int]]) -> Bool
+  func validateWinnerAtPoint(position: BoardPosition, array: [[Int]]) -> Bool
 }
 
 
 
 extension Player: MakeMovement {
-  mutating func placeChipOnColumn(column: Int, array: inout [[Int]]) -> (correctPlace: Bool, position: (xPos: Int, yPos: Int)) {
+  mutating func placeChipOnColumn(column: Int, array: inout [[Int]]) -> ResultPlayerAction {
     let range = (0..<array.count).reversed()
     var correctPlace = false
-    var position: (Int, Int)!
+    var position: (Int, Int) = (xPos: -1, yPos: -1)
     for index in range {
       if array[index][column] == 0 {
         debugPrint("Chip placed in: [\(index),\(column)]")

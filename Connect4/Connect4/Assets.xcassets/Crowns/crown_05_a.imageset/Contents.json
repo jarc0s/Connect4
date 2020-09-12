@@ -1,0 +1,12 @@
+{
+  "images" : [
+    {
+      "filename" : "crown_05_a.png",
+      "idiom" : "universal"
+    }
+  ],
+  "info" : {
+    "author" : "xcode",
+    "version" : 1
+  }
+}

@@ -9,14 +9,18 @@
 import Foundation
 
 class BoardInteractor: BoardInteractorInputProtocol {
-
-    // MARK: Properties
-    weak var presenter: BoardInteractorOutputProtocol?
-    var localDatamanager: BoardLocalDataManagerInputProtocol?
-    var remoteDatamanager: BoardRemoteDataManagerInputProtocol?
-
+  
+  // MARK: Properties
+  weak var presenter: BoardInteractorOutputProtocol?
+  var localDatamanager: BoardLocalDataManagerInputProtocol?
+  var remoteDatamanager: BoardRemoteDataManagerInputProtocol?
+  
+  func saveGameOnDevice(game: Game) -> Bool {
+    return localDatamanager?.saveGameOnDevice(game: game, key: Constants.Defaults.KEY_GAME_CONNECT4) ?? false
+  }
+  
 }
 
 extension BoardInteractor: BoardRemoteDataManagerOutputProtocol {
-    // TODO: Implement use case methods
+  // TODO: Implement use case methods
 }

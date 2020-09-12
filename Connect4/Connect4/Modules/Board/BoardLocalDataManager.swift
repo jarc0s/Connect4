@@ -10,5 +10,7 @@ import Foundation
 
 class BoardLocalDataManager:BoardLocalDataManagerInputProtocol {
     
-    
+  func saveGameOnDevice(game: Game, key: String) -> Bool{
+    return DataPersistance.writeGame(game: game, key: key)
+  }
 }
