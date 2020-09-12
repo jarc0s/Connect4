@@ -34,7 +34,11 @@ class HistoryView: UIViewController {
   override func viewWillAppear(_ animated: Bool) {
     super.viewWillAppear(animated)
     navigationController?.setNavigationBarHidden(true, animated: animated)
-    presenter?.getGameArray()
+    //Local
+    //presenter?.getGameArray()
+    
+    //FireBase
+    presenter?.getGameArrayFromFireBase()
   }
   
   override func viewWillDisappear(_ animated: Bool) {

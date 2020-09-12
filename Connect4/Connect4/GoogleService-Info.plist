@@ -1,0 +1,36 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
+<plist version="1.0">
+<dict>
+	<key>CLIENT_ID</key>
+	<string>418117583944-vfrhb28g1e51rbj0h2hegraamujeq271.apps.googleusercontent.com</string>
+	<key>REVERSED_CLIENT_ID</key>
+	<string>com.googleusercontent.apps.418117583944-vfrhb28g1e51rbj0h2hegraamujeq271</string>
+	<key>API_KEY</key>
+	<string>AIzaSyBkde3xsHR7z_rJj4Wj30UvqyhDqPl6kT0</string>
+	<key>GCM_SENDER_ID</key>
+	<string>418117583944</string>
+	<key>PLIST_VERSION</key>
+	<string>1</string>
+	<key>BUNDLE_ID</key>
+	<string>mx.com.Connect4</string>
+	<key>PROJECT_ID</key>
+	<string>connectfour-ddee4</string>
+	<key>STORAGE_BUCKET</key>
+	<string>connectfour-ddee4.appspot.com</string>
+	<key>IS_ADS_ENABLED</key>
+	<false></false>
+	<key>IS_ANALYTICS_ENABLED</key>
+	<false></false>
+	<key>IS_APPINVITE_ENABLED</key>
+	<true></true>
+	<key>IS_GCM_ENABLED</key>
+	<true></true>
+	<key>IS_SIGNIN_ENABLED</key>
+	<true></true>
+	<key>GOOGLE_APP_ID</key>
+	<string>1:418117583944:ios:2960b413aa14800d0ec47d</string>
+	<key>DATABASE_URL</key>
+	<string>https://connectfour-ddee4.firebaseio.com</string>
+</dict>
+</plist>

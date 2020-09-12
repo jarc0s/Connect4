@@ -95,29 +95,29 @@ class Connect4Tests: XCTestCase {
     
     XCTAssertNil(fetchNewGame?.winner, "already have a win in this game")
     
-    newGame.winner = player1
-    newGame.chipsUsedToWin = 10
+    newGame.winner = player1.name
+    newGame.chipsPlayer1 = 10
     
     //Update newGame register
-    DataPersistance.writeGame(game: newGame, key: keyDataPersistance)
+    _ = DataPersistance.writeGame(game: newGame, key: keyDataPersistance)
     
     fetchNewGame = DataPersistance.fetchGameWith(id: newGame.regDate, key: keyDataPersistance)
     
-    XCTAssertEqual(fetchNewGame?.winner?.name, player1.name, "player 1 is not the winner")
+    XCTAssertEqual(fetchNewGame?.winner, player1.name, "player 1 is not the winner")
     XCTAssertNotNil(newGame.winner, "there is no win in this game")
-    XCTAssertNotNil(newGame.chipsUsedToWin, "there are no registered chips in the game")
+    XCTAssertNotNil(newGame.chipsPlayer1, "there are no registered chips in the game")
     
-    XCTAssertEqual(fetchNewGame?.chipsUsedToWin, newGame.chipsUsedToWin, "they are not the same amount of chips after updating")
+    XCTAssertEqual(fetchNewGame?.chipsPlayer1, newGame.chipsPlayer1, "they are not the same amount of chips after updating")
     
     //Delete game from data persistance
     
-    DataPersistance.deleteGame(game: newGame, key: keyDataPersistance)
+    _ = DataPersistance.deleteGame(game: newGame, key: keyDataPersistance)
     
     fetchNewGame = DataPersistance.fetchGameWith(id: newGame.regDate, key: keyDataPersistance)
     
     XCTAssertNil(fetchNewGame, "there is a game with the key: \(newGame.regDate)")
     
-    DataPersistance.deleteAllGames(key: keyDataPersistance)
+    _ = DataPersistance.deleteAllGames(key: keyDataPersistance)
     
     allPreviusGames = DataPersistance.fetchAllGames(key: keyDataPersistance)
     

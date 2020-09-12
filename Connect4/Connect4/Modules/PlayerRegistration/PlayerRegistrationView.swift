@@ -28,6 +28,7 @@ class PlayerRegistrationView: UIViewController {
       presenter?.writeNewGameWith(player1: player1Name, player2: player2Name)
     }else {
       debugPrint("Complete the field player's name")
+      showAlertViewWinner(title: "Alert", message: "Complete the field player's name")
     }
   }
   
@@ -49,4 +50,18 @@ class PlayerRegistrationView: UIViewController {
 
 extension PlayerRegistrationView: PlayerRegistrationViewProtocol {
   // TODO: implement view output methods
+}
+
+
+extension PlayerRegistrationView {
+  private func showAlertViewWinner(title: String, message: String){
+    let alert = UIAlertController(title: title, message: message, preferredStyle: .alert)
+    
+    let okAction = UIAlertAction(title: "OK", style: UIAlertAction.Style.default) { [weak self]
+      UIAlertAction in
+      debugPrint("OK Pressed")
+    }
+    alert.addAction(okAction)
+    self.present(alert, animated: true, completion: nil)
+  }
 }

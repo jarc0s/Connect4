@@ -42,6 +42,7 @@ protocol BoardPresenterProtocol: class {
   func validatePlayerAction(result: ResultPlayerAction)
   func validateVerificationOfWinner(result: Bool)
   func saveGameOnDevice(player: String, chipsPlayer1: Int, chipsPlayer2: Int)
+  func saveGameOnFireBase(player: String, chipsPlayer1: Int, chipsPlayer2: Int)
   func makeNewGame()
 }
 
@@ -64,6 +65,7 @@ protocol BoardDataManagerInputProtocol: class {
 protocol BoardRemoteDataManagerInputProtocol: class {
   // INTERACTOR -> REMOTEDATAMANAGER
   var remoteRequestHandler: BoardRemoteDataManagerOutputProtocol? { get set }
+  func writeNewGameToFireBase(game: Game, key: String, completion: @escaping (Result<Bool, Error>) -> Void)
 }
 
 protocol BoardRemoteDataManagerOutputProtocol: class {
@@ -73,4 +75,5 @@ protocol BoardRemoteDataManagerOutputProtocol: class {
 protocol BoardLocalDataManagerInputProtocol: class {
   // INTERACTOR -> LOCALDATAMANAGER
   func saveGameOnDevice(game: Game, key: String) -> Bool
+  
 }

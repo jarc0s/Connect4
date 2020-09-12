@@ -25,6 +25,19 @@ extension PlayerRegistrationPresenter: PlayerRegistrationPresenterProtocol {
   
   func writeNewGameWith(player1: String, player2: String) {
     let newGame = Game(player1: player1, player2: player2, regDate: "\(Date().millisecondsSince1970)")
+    
+    //Local
+    //writeToLocal(newGame: newGame)
+    
+    //FireBase
+    writeToFireBase(newGame: newGame)
+  }
+  
+  private func segueToBoardView(game: Game) {
+    wireFrame?.segueToBoardView(from: view!, game: game)
+  }
+  
+  private func writeToLocal(newGame: Game){
     if interactor?.writeNewGame(game: newGame, key: Constants.Defaults.KEY_GAME_CONNECT4) ?? false {
       debugPrint("Game registered with players")
       segueToBoardView(game: newGame)
@@ -33,8 +46,15 @@ extension PlayerRegistrationPresenter: PlayerRegistrationPresenterProtocol {
     }
   }
   
-  private func segueToBoardView(game: Game) {
-    wireFrame?.segueToBoardView(from: view!, game: game)
+  private func writeToFireBase(newGame: Game){
+    interactor?.remoteDatamanager?.writeNewGameToFireBase(game: newGame, key: Constants.Defaults.KEY_GAME_CONNECT4, completion: { [unowned self] (result) in
+      switch result {
+      case .success(_):
+        self.segueToBoardView(game: newGame)
+      case .failure(_):
+        debugPrint("Error on write new Game")
+      }
+    })
   }
   
 }

@@ -7,6 +7,7 @@
 //
 
 import Foundation
+import Firebase
 
 struct DataPersistance {
   
@@ -68,5 +69,48 @@ struct DataPersistance {
     defaults.removeObject(forKey: key)
     return true
   }
+  
+  static func writeGameFireBase(game: Game, key: String, completion: @escaping (Result<Bool, Error>) -> Void) {
+    let gameDictionary = game.becomeADictionary()
+    var ref: DatabaseReference!
+    ref = Database.database().reference()
+    ref.child(key).child("\(game.regDate)").setValue(gameDictionary, withCompletionBlock: { error, _ in
+      if error == nil {
+        completion(.success(true))
+      }else {
+        completion(.failure(error!))
+      }
+    })
+  }
+  
+  
+  static func fetchAllGamesFromFireBase(key: String, completion: @escaping (Result<[Game], Error>) -> Void){
+    var rootRef: DatabaseReference!
+    rootRef = Database.database().reference()
+    let ref = rootRef.child("\(key)")
+    var arrayGame: [Game] = []
+    ref.observeSingleEvent(of: .value, with: { snapshot in
+      if let objectos2 = snapshot.children.allObjects as? [DataSnapshot] {
+        for algos in objectos2 {
+          if let cakeDictionary = algos.value as? Dictionary <String, Any> {
+            let key = algos.key as String
+            var newGame = Game(player1: "", player2: "", regDate: key)
+            newGame.player1 = cakeDictionary["player1"] as! String
+            newGame.player2 = cakeDictionary["player2"] as! String
+            newGame.chipsPlayer1 = cakeDictionary["chipsPlayer1"] as? Int
+            newGame.chipsPlayer2 = cakeDictionary["chipsPlayer2"] as? Int
+            newGame.winner = cakeDictionary["winner"] as? String
+            arrayGame.append(newGame)
+          }
+        }
+        completion(.success(arrayGame))
+        return
+      }else {
+        completion(.failure(ErrorConnect4.errorFetchFromFirebase))
+      }
+    })
+    completion(.failure(ErrorConnect4.errorFetchFromFirebase))
+  }
+  
   
 }

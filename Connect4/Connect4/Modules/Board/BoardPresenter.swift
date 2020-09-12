@@ -61,6 +61,20 @@ extension BoardPresenter: BoardPresenterProtocol {
     _ = interactor?.saveGameOnDevice(game: game!)
   }
   
+  func saveGameOnFireBase(player: String, chipsPlayer1: Int, chipsPlayer2: Int) {
+    game?.winner = player
+    game?.chipsPlayer1 = chipsPlayer1
+    game?.chipsPlayer2 = chipsPlayer2
+    interactor?.remoteDatamanager?.writeNewGameToFireBase(game: game!, key: Constants.Defaults.KEY_GAME_CONNECT4, completion: { (result) in
+      switch result {
+      case .success(_):
+        debugPrint("Succes writing on fire base")
+      case .failure(_):
+        debugPrint("Error on writing on fire base")
+      }
+    })
+  }
+  
   func makeNewGame() {
     game?.regDate = "\(Date().millisecondsSince1970)"
     game?.winner = ""

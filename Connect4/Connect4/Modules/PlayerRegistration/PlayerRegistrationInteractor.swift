@@ -19,6 +19,12 @@ class PlayerRegistrationInteractor: PlayerRegistrationInteractorInputProtocol {
     return localDatamanager?.writeNewGame(game: game, key: key) ?? false
   }
   
+  func writeNewGameToFireBase(game: Game, key: String, completion: @escaping (Result<Bool, Error>) -> Void){
+    remoteDatamanager?.writeNewGameToFireBase(game: game, key: key) { result in
+      completion(result)
+    }
+  }
+  
 }
 
 extension PlayerRegistrationInteractor: PlayerRegistrationRemoteDataManagerOutputProtocol {

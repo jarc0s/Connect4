@@ -174,7 +174,11 @@ extension BoardView: BoardViewProtocol {
     let playerName = isPlayer1sTurn ? player1.name : player2.name
     let chipsPlaced = isPlayer1sTurn ? player1.chipsPlaced : abs(player2.chipsPlaced)
     
-    presenter?.saveGameOnDevice(player: isPlayer1sTurn ? "P1" : "P2", chipsPlayer1: player1.chipsPlaced, chipsPlayer2: player2.chipsPlaced)
+    //Local
+    //presenter?.saveGameOnDevice(player: isPlayer1sTurn ? "P1" : "P2", chipsPlayer1: player1.chipsPlaced, chipsPlayer2: player2.chipsPlaced)
+    
+    //FireBAse
+    presenter?.saveGameOnFireBase(player:isPlayer1sTurn ? "P1" : "P2", chipsPlayer1: player1.chipsPlaced, chipsPlayer2: player2.chipsPlaced)
     showAlertViewWinner(title: "¡¡WINNER!!", message: "¡¡The player \"\(playerName)\" win with \(chipsPlaced) chips played!!")
   }
   
@@ -220,7 +224,7 @@ extension BoardView {
     
     let okAction = UIAlertAction(title: "OK", style: UIAlertAction.Style.default) { [weak self]
       UIAlertAction in
-      NSLog("OK Pressed")
+      debugPrint("OK Pressed")
       self!.addButtonToReplayAGame()
     }
     alert.addAction(okAction)

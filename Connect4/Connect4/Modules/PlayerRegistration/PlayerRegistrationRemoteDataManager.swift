@@ -9,7 +9,12 @@
 import Foundation
 
 class PlayerRegistrationRemoteDataManager:PlayerRegistrationRemoteDataManagerInputProtocol {
-    
-    var remoteRequestHandler: PlayerRegistrationRemoteDataManagerOutputProtocol?
-    
+  
+  var remoteRequestHandler: PlayerRegistrationRemoteDataManagerOutputProtocol?
+  
+  func writeNewGameToFireBase(game: Game, key: String, completion: @escaping (Result<Bool, Error>) -> Void) {
+    DataPersistance.writeGameFireBase(game: game, key: key) { (result) in
+      completion(result)
+    }
+  }
 }

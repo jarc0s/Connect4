@@ -9,7 +9,14 @@
 import Foundation
 
 class HistoryRemoteDataManager:HistoryRemoteDataManagerInputProtocol {
-    
-    var remoteRequestHandler: HistoryRemoteDataManagerOutputProtocol?
-    
+  
+  var remoteRequestHandler: HistoryRemoteDataManagerOutputProtocol?
+  
+  func fetchAllGamesFromFireBase(key: String, completion: @escaping (Result<[Game], Error>) -> Void) {
+    DataPersistance.fetchAllGamesFromFireBase(key: key) { (result) in
+      completion(result)
+    }
+  }
+  
+  
 }

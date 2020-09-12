@@ -29,6 +29,17 @@ extension HistoryPresenter: HistoryPresenterProtocol {
     }
   }
   
+  func getGameArrayFromFireBase() {
+    interactor?.remoteDatamanager?.fetchAllGamesFromFireBase(key: Constants.Defaults.KEY_GAME_CONNECT4, completion: { [unowned self] (result) in
+      switch result {
+      case .success(let gameArray):
+        self.view?.updateGameArray(array: gameArray)
+      case .failure(_):
+        debugPrint("error on fetch all games from firebase")
+      }
+    })
+  }
+  
 }
 
 extension HistoryPresenter: HistoryInteractorOutputProtocol {

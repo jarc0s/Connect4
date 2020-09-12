@@ -40,6 +40,7 @@ protocol PlayerRegistrationInteractorInputProtocol: class {
   var localDatamanager: PlayerRegistrationLocalDataManagerInputProtocol? { get set }
   var remoteDatamanager: PlayerRegistrationRemoteDataManagerInputProtocol? { get set }
   func writeNewGame(game: Game, key: String) -> Bool
+  func writeNewGameToFireBase(game: Game, key: String, completion: @escaping (Result<Bool, Error>) -> Void)
 }
 
 protocol PlayerRegistrationDataManagerInputProtocol: class {
@@ -49,6 +50,7 @@ protocol PlayerRegistrationDataManagerInputProtocol: class {
 protocol PlayerRegistrationRemoteDataManagerInputProtocol: class {
   // INTERACTOR -> REMOTEDATAMANAGER
   var remoteRequestHandler: PlayerRegistrationRemoteDataManagerOutputProtocol? { get set }
+  func writeNewGameToFireBase(game: Game, key: String, completion: @escaping (Result<Bool, Error>) -> Void)
 }
 
 protocol PlayerRegistrationRemoteDataManagerOutputProtocol: class {

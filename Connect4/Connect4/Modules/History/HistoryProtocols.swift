@@ -29,6 +29,7 @@ protocol HistoryPresenterProtocol: class {
   
   func viewDidLoad()
   func getGameArray()
+  func getGameArrayFromFireBase()
   
 }
 
@@ -51,6 +52,7 @@ protocol HistoryDataManagerInputProtocol: class {
 protocol HistoryRemoteDataManagerInputProtocol: class {
   // INTERACTOR -> REMOTEDATAMANAGER
   var remoteRequestHandler: HistoryRemoteDataManagerOutputProtocol? { get set }
+  func fetchAllGamesFromFireBase(key: String, completion: @escaping (Result<[Game], Error>) -> Void)
 }
 
 protocol HistoryRemoteDataManagerOutputProtocol: class {

@@ -9,7 +9,13 @@
 import Foundation
 
 class BoardRemoteDataManager:BoardRemoteDataManagerInputProtocol {
-    
-    var remoteRequestHandler: BoardRemoteDataManagerOutputProtocol?
-    
+  
+  var remoteRequestHandler: BoardRemoteDataManagerOutputProtocol?
+  
+  func writeNewGameToFireBase(game: Game, key: String, completion: @escaping (Result<Bool, Error>) -> Void) {
+    DataPersistance.writeGameFireBase(game: game, key: key) { (result) in
+      completion(result)
+    }
+  }
+  
 }
