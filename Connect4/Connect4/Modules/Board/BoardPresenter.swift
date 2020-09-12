@@ -54,13 +54,24 @@ extension BoardPresenter: BoardPresenterProtocol {
     
   }
   
-  func saveGameOnDevice(player: Player, chipsPlayer1: Int, chipsPlayer2: Int) {
+  func saveGameOnDevice(player: String, chipsPlayer1: Int, chipsPlayer2: Int) {
     game?.winner = player
     game?.chipsPlayer1 = chipsPlayer1
     game?.chipsPlayer2 = chipsPlayer2
     _ = interactor?.saveGameOnDevice(game: game!)
   }
   
+  func makeNewGame() {
+    game?.regDate = "\(Date().millisecondsSince1970)"
+    game?.winner = ""
+    game?.chipsPlayer1 = 0
+    game?.chipsPlayer2 = 0
+    getIdGame()
+    view?.disableAllButtons(disable: false)
+  }
+  
+  
+  //MARK: - Private func
   private func getIdGame() {
     if let game = game {
       view?.setIdGame(idGame: game.regDate)

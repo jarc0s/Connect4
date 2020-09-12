@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		885926C0250CF9E400166AD9 /* GameDetailCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 885926BF250CF9E400166AD9 /* GameDetailCell.swift */; };
 		885F2D80250C16F5005B70A8 /* UITextField+Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 885F2D7F250C16F5005B70A8 /* UITextField+Extension.swift */; };
 		885F2D89250C1EE4005B70A8 /* BoardInteractor.swift in Sources */ = {isa = PBXBuildFile; fileRef = 885F2D82250C1EE4005B70A8 /* BoardInteractor.swift */; };
 		885F2D8A250C1EE4005B70A8 /* BoardLocalDataManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 885F2D83250C1EE4005B70A8 /* BoardLocalDataManager.swift */; };
@@ -73,6 +74,7 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		885926BF250CF9E400166AD9 /* GameDetailCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GameDetailCell.swift; sourceTree = "<group>"; };
 		885F2D7F250C16F5005B70A8 /* UITextField+Extension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UITextField+Extension.swift"; sourceTree = "<group>"; };
 		885F2D82250C1EE4005B70A8 /* BoardInteractor.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BoardInteractor.swift; sourceTree = "<group>"; };
 		885F2D83250C1EE4005B70A8 /* BoardLocalDataManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BoardLocalDataManager.swift; sourceTree = "<group>"; };
@@ -150,6 +152,14 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		885926BE250CF9C900166AD9 /* Cells */ = {
+			isa = PBXGroup;
+			children = (
+				885926BF250CF9E400166AD9 /* GameDetailCell.swift */,
+			);
+			path = Cells;
+			sourceTree = "<group>";
+		};
 		885F2D81250C1EC6005B70A8 /* Board */ = {
 			isa = PBXGroup;
 			children = (
@@ -252,6 +262,7 @@
 		8894E7F1250BD2F5003010E7 /* History */ = {
 			isa = PBXGroup;
 			children = (
+				885926BE250CF9C900166AD9 /* Cells */,
 				8894E803250BD409003010E7 /* HistoryInteractor.swift */,
 				8894E804250BD409003010E7 /* HistoryLocalDataManager.swift */,
 				8894E805250BD409003010E7 /* HistoryPresenter.swift */,
@@ -422,6 +433,7 @@
 				885F2D8A250C1EE4005B70A8 /* BoardLocalDataManager.swift in Sources */,
 				8894E80C250BD409003010E7 /* HistoryPresenter.swift in Sources */,
 				8894E7EF250BD0FB003010E7 /* HomeView.swift in Sources */,
+				885926C0250CF9E400166AD9 /* GameDetailCell.swift in Sources */,
 				8894E7FC250BD33A003010E7 /* PlayerRegistrationPresenter.swift in Sources */,
 				885F2D8F250C1EE4005B70A8 /* BoardWireFrame.swift in Sources */,
 				885F2D8C250C1EE4005B70A8 /* BoardProtocols.swift in Sources */,

@@ -9,20 +9,28 @@
 import Foundation
 
 class HistoryPresenter  {
-    
-    // MARK: Properties
-    weak var view: HistoryViewProtocol?
-    var interactor: HistoryInteractorInputProtocol?
-    var wireFrame: HistoryWireFrameProtocol?
-    
+  
+  // MARK: Properties
+  weak var view: HistoryViewProtocol?
+  var interactor: HistoryInteractorInputProtocol?
+  var wireFrame: HistoryWireFrameProtocol?
+  
 }
 
 extension HistoryPresenter: HistoryPresenterProtocol {
-    // TODO: implement presenter methods
-    func viewDidLoad() {
+  // TODO: implement presenter methods
+  func viewDidLoad() {
+    view?.configTableView()
+  }
+  
+  func getGameArray() {
+    if let gameArray = interactor?.fetchAllGames() {
+      view?.updateGameArray(array: gameArray)
     }
+  }
+  
 }
 
 extension HistoryPresenter: HistoryInteractorOutputProtocol {
-    // TODO: implement interactor output methods
+  // TODO: implement interactor output methods
 }

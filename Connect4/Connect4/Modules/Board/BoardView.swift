@@ -31,10 +31,9 @@ class BoardView: UIViewController {
   @IBOutlet weak var boardViewP1: UIView!
   @IBOutlet weak var boardViewP2: UIView!
   
-  
   var player1: Player!
   var player2: Player!
-  var arrayBoard: [[Int]] = Board.buildBoard()
+  var arrayBoard: [[Int]]!
   var isPlayer1sTurn: Bool! {
     didSet{
       self.updateChipsPlaceHolder()
@@ -51,13 +50,13 @@ class BoardView: UIViewController {
   
   var chipsCount: Int = 0 {
     didSet{
-      //DispatchQueue.main.async {
-        if self.isPlayer1sTurn {
-          self.labelChips1.text = "\(abs(self.chipsCount))"
-        }else {
-          self.labelChips2.text = "\(abs(self.chipsCount))"
-        }
-      //}
+      
+      if self.isPlayer1sTurn {
+        self.labelChips1.text = "\(abs(self.chipsCount))"
+      }else {
+        self.labelChips2.text = "\(abs(self.chipsCount))"
+      }
+      
     }
   }
   
@@ -77,6 +76,10 @@ class BoardView: UIViewController {
     presenter?.makeMovement(column: sender.tag, isPlayer1sTurn: isPlayer1sTurn)
   }
   
+  @objc func action(sender: UIBarButtonItem) {
+    presenter?.makeNewGame()
+  }
+  
 }
 
 extension BoardView: BoardViewProtocol {
@@ -86,11 +89,21 @@ extension BoardView: BoardViewProtocol {
   }
   
   func configureGame(game: Game) {
+    
     player1 = Player(name: game.player1, identityValue: PlayerIdentityType.player1.rawValue)
     player2 = Player(name: game.player2, identityValue: PlayerIdentityType.player2.rawValue)
     isPlayer1sTurn = Int.random(in: 1...2) == 1 ? true : false
     labelPlayer1.text = game.player1
     labelPlayer2.text = game.player2
+    labelChips1.text = "0"
+    labelChips2.text = "0"
+    crown1.image = nil
+    crown2.image = nil
+    boardViewP1.isHidden = false
+    boardViewP2.isHidden = false
+    arrayBoard = Board.buildBoard()
+    self.navigationItem.rightBarButtonItem = nil
+    clearBoard()
     
   }
   
@@ -110,6 +123,7 @@ extension BoardView: BoardViewProtocol {
     let imageName = isPlayer1sTurn ? "chip_red" : "chip_blue"
     let chip = Board.getChipForPlayer(chipColor: imageName)
     let contentView = findStackView(position: position)
+    chip.id = "chip"
     
     contentView.addSubview(chip)
     chip.translatesAutoresizingMaskIntoConstraints = false
@@ -160,12 +174,8 @@ extension BoardView: BoardViewProtocol {
     let playerName = isPlayer1sTurn ? player1.name : player2.name
     let chipsPlaced = isPlayer1sTurn ? player1.chipsPlaced : abs(player2.chipsPlaced)
     
-    
-    
-    presenter?.saveGameOnDevice(player: isPlayer1sTurn ? player1 : player2, chipsPlayer1: player1.chipsPlaced, chipsPlayer2: player2.chipsPlaced)
-    
+    presenter?.saveGameOnDevice(player: isPlayer1sTurn ? "P1" : "P2", chipsPlayer1: player1.chipsPlaced, chipsPlayer2: player2.chipsPlaced)
     showAlertViewWinner(title: "¡¡WINNER!!", message: "¡¡The player \"\(playerName)\" win with \(chipsPlaced) chips played!!")
-    
   }
   
 }
@@ -208,12 +218,50 @@ extension BoardView {
   private func showAlertViewWinner(title: String, message: String){
     let alert = UIAlertController(title: title, message: message, preferredStyle: .alert)
     
-    let okAction = UIAlertAction(title: "OK", style: UIAlertAction.Style.default) {
+    let okAction = UIAlertAction(title: "OK", style: UIAlertAction.Style.default) { [weak self]
       UIAlertAction in
       NSLog("OK Pressed")
+      self!.addButtonToReplayAGame()
     }
     alert.addAction(okAction)
     self.present(alert, animated: true, completion: nil)
   }
   
+  private func addButtonToReplayAGame(){
+    self.navigationItem.rightBarButtonItem = UIBarButtonItem.init(barButtonSystemItem: UIBarButtonItem.SystemItem.reply, target: self, action: #selector(self.action(sender:)))
+  }
+  
+  
+  private func clearBoard(){
+    stackView5.subviews.forEach({ view in
+      if let image = view.view(withId: "chip") {
+        image.removeFromSuperview()
+      }
+    })
+    stackView4.subviews.forEach({ view in
+      if let image = view.view(withId: "chip") {
+        image.removeFromSuperview()
+      }
+    })
+    stackView3.subviews.forEach({ view in
+      if let image = view.view(withId: "chip") {
+        image.removeFromSuperview()
+      }
+    })
+    stackView2.subviews.forEach({ view in
+      if let image = view.view(withId: "chip") {
+        image.removeFromSuperview()
+      }
+    })
+    stackView1.subviews.forEach({ view in
+      if let image = view.view(withId: "chip") {
+        image.removeFromSuperview()
+      }
+    })
+    stackView0.subviews.forEach({ view in
+      if let image = view.view(withId: "chip") {
+        image.removeFromSuperview()
+      }
+    })
+  }
 }

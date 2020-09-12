@@ -9,6 +9,10 @@
 import Foundation
 
 class HistoryLocalDataManager:HistoryLocalDataManagerInputProtocol {
-    
-    
+  func fetchAllGames(key: String) -> [Game]? {
+    if let gameDictionary = DataPersistance.fetchAllGames(key: key) {
+      return gameDictionary.map({ $0.value })
+    }
+    return nil
+  }
 }

@@ -126,7 +126,7 @@
                                                 </connections>
                                             </button>
                                         </subviews>
-                                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                        <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                         <accessibility key="accessibilityConfiguration" identifier="content0"/>
                                         <constraints>
                                             <constraint firstAttribute="bottom" secondItem="dj7-IT-bx7" secondAttribute="bottom" constant="3" id="2Gx-AA-tj6"/>
@@ -154,7 +154,7 @@
                                                 </connections>
                                             </button>
                                         </subviews>
-                                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                        <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                         <accessibility key="accessibilityConfiguration" identifier="content1"/>
                                         <constraints>
                                             <constraint firstAttribute="trailing" secondItem="iLi-m0-DSL" secondAttribute="trailing" constant="3" id="HyS-Yw-s2G"/>
@@ -182,7 +182,7 @@
                                                 </connections>
                                             </button>
                                         </subviews>
-                                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                        <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                         <accessibility key="accessibilityConfiguration" identifier="content2"/>
                                         <constraints>
                                             <constraint firstItem="LRS-rX-nwi" firstAttribute="top" secondItem="QTH-z0-Swf" secondAttribute="top" constant="3" id="Cpk-qM-PaD"/>
@@ -205,7 +205,7 @@
                                                 </connections>
                                             </button>
                                         </subviews>
-                                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                        <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                         <accessibility key="accessibilityConfiguration" identifier="content3"/>
                                         <constraints>
                                             <constraint firstAttribute="bottom" secondItem="DTL-lH-Fnq" secondAttribute="bottom" constant="3" id="A4d-Ue-tcp"/>
@@ -232,7 +232,7 @@
                                                 </connections>
                                             </button>
                                         </subviews>
-                                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                        <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                         <accessibility key="accessibilityConfiguration" identifier="content4"/>
                                         <constraints>
                                             <constraint firstAttribute="trailing" secondItem="MkT-BB-wM4" secondAttribute="trailing" constant="3" id="5Fh-lS-hQo"/>
@@ -259,7 +259,7 @@
                                                 </connections>
                                             </button>
                                         </subviews>
-                                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                        <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                         <accessibility key="accessibilityConfiguration" identifier="content5"/>
                                         <constraints>
                                             <constraint firstItem="29Y-zA-mmz" firstAttribute="top" secondItem="a8Y-ah-gkB" secondAttribute="top" constant="3" id="0As-Ts-1Ah"/>
@@ -286,7 +286,7 @@
                                                 </connections>
                                             </button>
                                         </subviews>
-                                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                        <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                         <accessibility key="accessibilityConfiguration" identifier="content6"/>
                                         <constraints>
                                             <constraint firstItem="Y4d-7D-y2d" firstAttribute="top" secondItem="6av-W6-NzG" secondAttribute="top" constant="3" id="4cS-rC-RTi"/>
@@ -566,7 +566,7 @@
                                 <nil key="highlightedColor"/>
                             </label>
                         </subviews>
-                        <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
+                        <color key="backgroundColor" red="0.91752637299045936" green="0.63924646380000005" blue="0.22276667402826855" alpha="0.34438493816254417" colorSpace="custom" customColorSpace="sRGB"/>
                         <constraints>
                             <constraint firstItem="JPz-Uz-reN" firstAttribute="leading" secondItem="aak-vY-uc8" secondAttribute="leading" constant="8" id="3s6-wh-4Rf"/>
                             <constraint firstItem="aak-vY-uc8" firstAttribute="trailing" secondItem="GTq-oH-b9a" secondAttribute="trailing" constant="8" id="47G-yD-DvE"/>

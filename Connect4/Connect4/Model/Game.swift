@@ -15,7 +15,7 @@ struct Game: Codable, CustomStringConvertible {
   var player2: String
   var chipsPlayer1: Int?
   var chipsPlayer2: Int?
-  var winner: Player?
+  var winner: String?
   var regDate: String 
   
   var description: String {

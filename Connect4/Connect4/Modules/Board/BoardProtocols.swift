@@ -41,7 +41,8 @@ protocol BoardPresenterProtocol: class {
   func makeMovement(column: Int, isPlayer1sTurn: Bool)
   func validatePlayerAction(result: ResultPlayerAction)
   func validateVerificationOfWinner(result: Bool)
-  func saveGameOnDevice(player: Player, chipsPlayer1: Int, chipsPlayer2: Int)
+  func saveGameOnDevice(player: String, chipsPlayer1: Int, chipsPlayer2: Int)
+  func makeNewGame()
 }
 
 protocol BoardInteractorOutputProtocol: class {

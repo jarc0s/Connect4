@@ -15,24 +15,26 @@
                         <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Splash View Controller" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="gEK-Y0-Z8W">
-                                <rect key="frame" x="120.5" y="437.5" width="173" height="21"/>
-                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
-                                <nil key="textColor"/>
-                                <nil key="highlightedColor"/>
-                            </label>
+                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" alpha="0.80000000000000004" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="Image" translatesAutoresizingMaskIntoConstraints="NO" id="kos-r3-CJh">
+                                <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
+                            </imageView>
                         </subviews>
                         <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
                         <constraints>
-                            <constraint firstItem="gEK-Y0-Z8W" firstAttribute="centerY" secondItem="0H1-H8-GsA" secondAttribute="centerY" id="OUm-1m-ZX9"/>
-                            <constraint firstItem="gEK-Y0-Z8W" firstAttribute="centerX" secondItem="0H1-H8-GsA" secondAttribute="centerX" id="z0B-6Z-0Jf"/>
+                            <constraint firstAttribute="bottom" secondItem="kos-r3-CJh" secondAttribute="bottom" id="IYL-yV-cPA"/>
+                            <constraint firstItem="kos-r3-CJh" firstAttribute="leading" secondItem="0H1-H8-GsA" secondAttribute="leading" id="Qb1-n6-NbD"/>
+                            <constraint firstAttribute="trailing" secondItem="kos-r3-CJh" secondAttribute="trailing" id="acD-Rw-D7U"/>
+                            <constraint firstItem="kos-r3-CJh" firstAttribute="top" secondItem="0H1-H8-GsA" secondAttribute="top" id="yQs-yD-3RK"/>
                         </constraints>
                         <viewLayoutGuide key="safeArea" id="SJh-bb-WGr"/>
                     </view>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="2ed-WW-etL" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="252" y="141"/>
+            <point key="canvasLocation" x="250.72463768115944" y="140.625"/>
         </scene>
     </scenes>
+    <resources>
+        <image name="Image" width="1200" height="700"/>
+    </resources>
 </document>

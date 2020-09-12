@@ -9,14 +9,18 @@
 import Foundation
 
 class HistoryInteractor: HistoryInteractorInputProtocol {
-
-    // MARK: Properties
-    weak var presenter: HistoryInteractorOutputProtocol?
-    var localDatamanager: HistoryLocalDataManagerInputProtocol?
-    var remoteDatamanager: HistoryRemoteDataManagerInputProtocol?
-
+  
+  // MARK: Properties
+  weak var presenter: HistoryInteractorOutputProtocol?
+  var localDatamanager: HistoryLocalDataManagerInputProtocol?
+  var remoteDatamanager: HistoryRemoteDataManagerInputProtocol?
+  
+  func fetchAllGames() -> [Game]? {
+    return localDatamanager?.fetchAllGames(key: Constants.Defaults.KEY_GAME_CONNECT4)
+  }
+  
 }
 
 extension HistoryInteractor: HistoryRemoteDataManagerOutputProtocol {
-    // TODO: Implement use case methods
+  // TODO: Implement use case methods
 }

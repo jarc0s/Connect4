@@ -95,6 +95,7 @@ extension Player: MakeMovement {
       if abs(sumPoints) == 4 {
         debugPrint("validateHorizontalRow range: \(range)")
         isWinner.toggle()
+        break
       }
     }
     return (isWinner, sumPoints)
