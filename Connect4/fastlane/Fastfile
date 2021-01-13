@@ -17,13 +17,10 @@ default_platform(:ios)
 
 platform :ios do
   desc "Description of what the lane does"
-  lane :test do
-  xctest(
-    clean: false,
-    code_coverage: true,
-    scheme: "Connect4",
-    workspace: "Connect4.xcworkspace",
-    destination: "name=iPhone 11"
-  )
+  lane :unitTest do
+    # add actions here: https://docs.fastlane.tools/actions
+    scan(workspace: "Connect4.xcworkspace", 
+    	scheme: "Connect4",
+    	devices: ["iPhone\ 11"])
   end
 end
