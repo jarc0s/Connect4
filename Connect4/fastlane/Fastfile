@@ -22,7 +22,7 @@ platform :ios do
     clean: false,
     code_coverage: true,
     scheme: "Connect4",
-    #workspace: "Connect4.xcodeproj",
+    workspace: "Connect4.xcworkspace",
     destination: "name=iPhone 11"
   )
   end
