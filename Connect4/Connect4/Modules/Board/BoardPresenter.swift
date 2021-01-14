@@ -30,8 +30,6 @@ extension BoardPresenter: BoardPresenterProtocol {
     view?.disableAllButtons(disable: true)
     view?.makePlayerTryToPutChip(column: column)
     view?.updateChipCountForPlayer()
-    //view?.shiftPlayer()
-    //view?.disableAllButtons(disable: false)
     view?.lightUpChipOn(column: column, alpha: 0.6)
     view?.isPlayerWin()
   }
