@@ -1,10 +1,10 @@
 <?xml version='1.0' encoding='UTF-8'?>
 <testsuites name='Connect4Tests.xctest' tests='5' failures='0'>
   <testsuite name='Connect4Tests.Connect4Tests' tests='5' failures='0'>
-    <testcase classname='Connect4Tests.Connect4Tests' name='testBuildBoard6x7' time='0.002'/>
-    <testcase classname='Connect4Tests.Connect4Tests' name='testDataPersistance' time='0.015'/>
+    <testcase classname='Connect4Tests.Connect4Tests' name='testBuildBoard6x7' time='0.003'/>
+    <testcase classname='Connect4Tests.Connect4Tests' name='testDataPersistance' time='0.013'/>
     <testcase classname='Connect4Tests.Connect4Tests' name='testExample' time='0.001'/>
-    <testcase classname='Connect4Tests.Connect4Tests' name='testPerformanceExample' time='0.327'/>
-    <testcase classname='Connect4Tests.Connect4Tests' name='testPlayerMovement' time='0.001'/>
+    <testcase classname='Connect4Tests.Connect4Tests' name='testPerformanceExample' time='0.352'/>
+    <testcase classname='Connect4Tests.Connect4Tests' name='testPlayerMovement' time='0.002'/>
   </testsuite>
 </testsuites>

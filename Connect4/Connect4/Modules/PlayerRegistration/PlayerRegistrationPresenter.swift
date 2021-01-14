@@ -27,10 +27,10 @@ extension PlayerRegistrationPresenter: PlayerRegistrationPresenterProtocol {
     let newGame = Game(player1: player1, player2: player2, regDate: "\(Date().millisecondsSince1970)")
     
     //Local
-    //writeToLocal(newGame: newGame)
+    writeToLocal(newGame: newGame)
     
     //FireBase
-    writeToFireBase(newGame: newGame)
+    //writeToFireBase(newGame: newGame)
   }
   
   private func segueToBoardView(game: Game) {

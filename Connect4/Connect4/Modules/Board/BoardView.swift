@@ -175,10 +175,10 @@ extension BoardView: BoardViewProtocol {
     let chipsPlaced = isPlayer1sTurn ? player1.chipsPlaced : abs(player2.chipsPlaced)
     
     //Local
-    //presenter?.saveGameOnDevice(player: isPlayer1sTurn ? "P1" : "P2", chipsPlayer1: player1.chipsPlaced, chipsPlayer2: player2.chipsPlaced)
+    presenter?.saveGameOnDevice(player: isPlayer1sTurn ? "P1" : "P2", chipsPlayer1: player1.chipsPlaced, chipsPlayer2: player2.chipsPlaced)
     
     //FireBAse
-    presenter?.saveGameOnFireBase(player:isPlayer1sTurn ? "P1" : "P2", chipsPlayer1: player1.chipsPlaced, chipsPlayer2: player2.chipsPlaced)
+    //presenter?.saveGameOnFireBase(player:isPlayer1sTurn ? "P1" : "P2", chipsPlayer1: player1.chipsPlaced, chipsPlayer2: player2.chipsPlaced)
     showAlertViewWinner(title: "¡¡WINNER!!", message: "¡¡The player \"\(playerName)\" win with \(chipsPlaced) chips played!!")
   }
   
